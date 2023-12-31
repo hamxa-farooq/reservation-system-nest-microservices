@@ -12,6 +12,7 @@ import { LoggerModule } from '@app/common';
       isGlobal: true,
       validationSchema: joi.object({
         PORT: joi.string().required(),
+        STRIPE_SECRET_KEY: joi.string().required(),
       }),
     }),
   ],
