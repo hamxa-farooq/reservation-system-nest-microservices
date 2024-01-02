@@ -23,10 +23,11 @@ export class ReservationsController {
     @Body() createReservationDto: CreateReservationDto,
     @CurrentUser() currentUser: UserDto,
   ) {
-    return await this.reservationsService.create(
+    const reservation = await this.reservationsService.create(
       createReservationDto,
       currentUser._id,
     );
+    return reservation;
   }
 
   @UseGuards(JwtAuthGuard)
